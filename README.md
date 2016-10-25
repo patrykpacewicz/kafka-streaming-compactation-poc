@@ -29,5 +29,5 @@ bin/05-run-kafka-consumer.sh ex-topic-name
  bin/01-run-kafka.sh
  bin/03-create-kafka-topic.sh ex-topic-name
  ./gradlew :kafka-producer-app:run -Ptopic=ex-topic-name
- bin/05-run-kafka-consumer.sh ex-topic-name
+ ./gradlew :kafka-consumer-app:run -Ptopic=ex-topic-name
 ```
