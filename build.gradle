@@ -1,0 +1,43 @@
+subprojects {
+  apply plugin: 'java'
+  apply plugin: 'scala'
+
+  sourceCompatibility = 1.8
+  group 'pl.ppac.poc.kafk.consumer'
+  version '1.0.0'
+
+  repositories {
+      jcenter()
+      mavenCentral()
+  }
+
+  dependencies {
+      // scala
+      compile 'org.scala-lang:scala-library:2.11.8'
+      compile 'com.typesafe.scala-logging:scala-logging-slf4j_2.11:2.1.2'
+      compile 'org.scala-lang.modules:scala-java8-compat_2.11:0.7.0'
+
+      // guava
+      compile 'com.google.guava:guava:19.0'
+
+      // kafka
+      compile ('org.apache.kafka:kafka-streams:0.10.0.1') { exclude group: 'org.slf4j' }
+      compile ('org.apache.kafka:kafka-clients:0.10.0.1') { exclude group: 'org.slf4j' }
+
+      // logs
+      compile 'ch.qos.logback:logback-classic:1.1.7'
+
+      // tests
+      testCompile 'org.scalatest:scalatest_2.11:3.0.0'
+  }
+
+  ScalaCompileOptions.metaClass.daemonServer = true
+  ScalaCompileOptions.metaClass.fork = true
+  ScalaCompileOptions.metaClass.useAnt = false
+  ScalaCompileOptions.metaClass.useCompileDaemon = false
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.1'
+}

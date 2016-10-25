@@ -1,0 +1,2 @@
+include "kafka-consumer-app"
+include "kafka-producer-app"

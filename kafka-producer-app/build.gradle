@@ -1,0 +1,8 @@
+apply plugin: 'application'
+
+mainClassName = 'pl.ppac.poc.kafka.producer.Application'
+
+dependencies {
+    compile 'io.codearte.jfairy:jfairy:0.5.3'
+}
+
