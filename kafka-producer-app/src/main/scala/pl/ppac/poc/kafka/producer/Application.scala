@@ -7,7 +7,7 @@ import scala.util.Random
 
 object Application extends App with LazyLogging with Faker with Kafka {
   logger.info("Start Producing events for kafka")
-  val topic = "poc-topic"
+  val topic = args(0)
   val ids = 1 to 10 map { i => Random.nextInt(10000) } map { "%05d".format(_) } map { "id::" + _ }
 
   logger.info("Creating kafka producer")
