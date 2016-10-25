@@ -2,7 +2,7 @@
 
 KAFKA_DIR=/opt/kafka_2.11-0.10.0.1
 KAFKA_TOPIC=$1
-KAFKA_SH=kafka-topics.sh
+KAFKA_SH=kafka-console-producer.sh
 
 if [ -z $KAFKA_TOPIC ] ; then
   echo Missing required argument "[topic]"
