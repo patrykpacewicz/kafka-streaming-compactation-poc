@@ -6,4 +6,4 @@ dependencies {
     compile 'io.codearte.jfairy:jfairy:0.5.3'
 }
 
-run { args(topic) }
+if ( project.hasProperty("topic") ) { run { args(topic) } }

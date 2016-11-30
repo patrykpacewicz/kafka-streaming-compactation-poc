@@ -24,7 +24,7 @@ bin/04-run-kafka-producer.sh ex-topic-name
 bin/05-run-kafka-consumer.sh ex-topic-name
 ```
 
-2. Use kafka-client and kafka-stream liblaries example
+2. Use kafka-client liblaries example
 ```sh
  bin/01-run-kafka.sh
  bin/03-create-kafka-topic.sh ex-topic-name

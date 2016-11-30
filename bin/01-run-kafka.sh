@@ -1,9 +1,7 @@
 #!/bin/bash -
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $dir/config/config.sh
 
-docker-compose -f $DIR/config/docker-compose-kafka.yml \
-    up --force-recreate
-
-docker-compose -f $DIR/config/docker-compose-kafka.yml \
-    rm -f
+docker-compose -f $dockerComposeConfig up --force-recreate
+docker-compose -f $dockerComposeConfig rm -f
